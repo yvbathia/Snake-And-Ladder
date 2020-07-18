@@ -1,0 +1,30 @@
+.root {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dice {
+  height: 50px;
+  width: 50px;
+  color: black;
+  background-color: white;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+}
+
+.one, .two {
+  cursor: pointer;
+}
+
+.one {
+  background: lightcoral;
+}
+
+.two {
+  background: lightblue;
+}
