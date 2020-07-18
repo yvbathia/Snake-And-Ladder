@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Dice.module.scss";
+import Button from "../Button";
 
 const Dice = ({ currentDiceValue, handleRollDice, color }) => {
   const handleOnClick = () => {
@@ -8,9 +9,11 @@ const Dice = ({ currentDiceValue, handleRollDice, color }) => {
   return (
     <div className={style.root}>
       <div className={style.dice}>{currentDiceValue}</div>
-      <button className={style[color]} onClick={handleOnClick}>
-        Roll the dice
-      </button>
+      <Button
+        className={style[color]}
+        onClick={handleOnClick}
+        value="Roll the dice"
+      />
     </div>
   );
 };

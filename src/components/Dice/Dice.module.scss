@@ -17,14 +17,10 @@
   border: 1px solid;
 }
 
-.one, .two {
-  cursor: pointer;
-}
-
 .one {
-  background: lightcoral;
+  background-color: red !important;
 }
 
 .two {
-  background: lightblue;
+  background-color: blue !important;
 }

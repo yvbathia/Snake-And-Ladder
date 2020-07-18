@@ -43,7 +43,7 @@ const PlayArea = ({ players, setPlayers, setWinner, gameOver }) => {
       <div className={style.players}>
         {currentPlayers.map((value, index) => {
           return (
-            <div>
+            <div key={value}>
               <div>Player {index + 1}</div>
               <PlayerCounter color={value} />
             </div>

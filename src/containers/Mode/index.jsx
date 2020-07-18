@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Mode.module.scss";
+import Button from "../../components/Button";
 
 const Mode = ({ letsPlay, setPlayers }) => {
   const handleOnClick = (mode) => {
@@ -16,12 +17,8 @@ const Mode = ({ letsPlay, setPlayers }) => {
         Welcome to the <b>SNAKE AND LADDER</b> Game
       </div>
       <div>Select play mode</div>
-      <button className={style.btn} onClick={() => handleOnClick(1)}>
-        Single Play
-      </button>
-      <button className={style.btn} onClick={() => handleOnClick(2)}>
-        Dual Play
-      </button>
+      <Button onClick={() => handleOnClick(1)} value="Single Play" />
+      <Button onClick={() => handleOnClick(2)} value="Dual Play" />
     </div>
   );
 };
