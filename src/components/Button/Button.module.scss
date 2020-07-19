@@ -6,4 +6,8 @@
   max-width: 300px;
   width: 100%;
   cursor: pointer;
+  &:disabled {
+      cursor: no-drop !important;
+      opacity: 0.5 !important;
+  }
 }

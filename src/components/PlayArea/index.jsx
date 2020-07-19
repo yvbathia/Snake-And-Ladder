@@ -11,19 +11,31 @@ const PlayArea = ({ players, setPlayers, setWinner, gameOver }) => {
   const handleRollDice = (value) => {
     setCurrentDiceValue(value);
     const tempPlayer = { ...players };
-    const nextValue = calculateNextValue(players[currentPlayer] + value);
-    if (nextValue < 100) {
-      tempPlayer[currentPlayer] = nextValue;
-    } else if (nextValue === 100) {
+    const nextValueWithoutRule = players[currentPlayer] + value;
+    const nextValue = calculateNextValue(nextValueWithoutRule);
+
+    if (nextValue === 100) {
       tempPlayer[currentPlayer] = nextValue;
       setPlayers({ ...tempPlayer });
       setTimeout(() => {
-        setWinner('Player ' + currentPlayer);
+        setWinner("Player " + currentPlayer);
         gameOver();
       }, 1000);
+    } else if (nextValue < 100) {
+      console.log(nextValueWithoutRule, nextValue);
+      if (nextValue !== nextValueWithoutRule) {
+        tempPlayer[currentPlayer] = nextValueWithoutRule;
+        setPlayers({ ...tempPlayer });
+        setTimeout(() => {
+          tempPlayer[currentPlayer] = nextValue;
+          setPlayers({ ...tempPlayer });
+        }, 1000);
+      } else {
+        tempPlayer[currentPlayer] = nextValue;
+        setPlayers({ ...tempPlayer });
+      }
     }
 
-    setPlayers({ ...tempPlayer });
     if (currentPlayer === "one" && players.two !== -1) {
       setCurrentPlayer("two");
     } else {
